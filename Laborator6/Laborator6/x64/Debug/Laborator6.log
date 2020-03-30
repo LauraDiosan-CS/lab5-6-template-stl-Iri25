@@ -1,0 +1,35 @@
+﻿  Domain.cpp
+  Repository.cpp
+C:\Users\Scorpion\Desktop\Laborator6\Laborator6\Repository.cpp(74,22): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xstddef(127,1): error C2678: binary '<': no operator found which takes a left-hand operand of type 'const _Ty' (or there is no acceptable conversion)
+          with
+          [
+              _Ty=Store
+          ]
+C:\Users\Scorpion\Desktop\Laborator6\Laborator6\Domain.h(20,7): message : could be 'bool Store::operator <(const Store &)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xstddef(127,1): message : while trying to match the argument list '(const _Ty, const _Ty)'
+          with
+          [
+              _Ty=Store
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xstddef(126): message : while compiling class template member function 'bool std::less<Store>::operator ()(const _Ty &,const _Ty &) const'
+          with
+          [
+              _Ty=Store
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xutility(1483): message : see reference to function template instantiation 'bool std::less<Store>::operator ()(const _Ty &,const _Ty &) const' being compiled
+          with
+          [
+              _Ty=Store
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xmemory(1318): message : see reference to class template instantiation 'std::less<Store>' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xmemory(1318): message : see reference to variable template 'const bool is_empty_v<std::less<Store> >' being compiled
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\set(54): message : see reference to class template instantiation 'std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>' being compiled
+          with
+          [
+              _Kty=Store,
+              _Pr=std::less<Store>,
+              _Alloc=std::allocator<Store>
+          ]
+C:\Users\Scorpion\Desktop\Laborator6\Laborator6\Repository.h(9): message : see reference to class template instantiation 'std::set<Store,std::less<Store>,std::allocator<Store>>' being compiled
+  Generating Code...

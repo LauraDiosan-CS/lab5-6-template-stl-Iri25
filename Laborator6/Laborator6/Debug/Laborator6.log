@@ -1,0 +1,8 @@
+﻿  Domain.cpp
+  Main.cpp
+  Repository.cpp
+C:\Users\Scorpion\Desktop\Laborator6\Laborator6\Repository.cpp(60,17): warning C4018: '>=': signed/unsigned mismatch
+  Tests.cpp
+  Generating Code...
+C:\Users\Scorpion\Desktop\Laborator6\Laborator6\Main.cpp(71): warning C4715: 'run': not all control paths return a value
+  Laborator6.vcxproj -> C:\Users\Scorpion\Desktop\Laborator6\Debug\Laborator6.exe
