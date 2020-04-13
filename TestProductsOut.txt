@@ -1,0 +1,3 @@
+Coverall 150  40
+Skirt 60  20
+T-shirt 35  10
