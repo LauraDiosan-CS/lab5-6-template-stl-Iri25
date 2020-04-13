@@ -53,50 +53,61 @@ void Service::buyElem(int& n, Product products[], int& lenght, Product results[]
 	int i, j;
 	for (i = 0; i < n; i++)
 	{
-		Product p = products[i];
+		Product curentProduct = products[i];
 		int price = 0;
-		int ok = 0;
+		bool ok = 0;
+		bool OK = 0;
 		for (j = 0; j < getSize(); j++)
 		{
 			Product crtProduct = repository.elemAtPosition(j);
-			if ((strcmp(crtProduct.getName(), p.getName()) == 0) && (crtProduct.getNumber() >= p.getNumber()))
+			if ((strcmp(crtProduct.getName(), curentProduct.getName()) == 0))
+				OK = 1;
+			else
+				OK = 0;
+		}
+		if(OK == 1)
+		{
+			for (j = 0; j < getSize(); j++)
 			{
+				Product crtProduct = repository.elemAtPosition(j);
+				if(crtProduct.getNumber() >= curentProduct.getNumber())
+				{
 				ok_product[i] = 1;
 				ok_name[i] = 1;
 				ok_number[i] = 1;
 				price = crtProduct.getPrice();
 				ok = 1;
-				crtProduct.setNumber(crtProduct.getNumber() - p.getNumber());
+				crtProduct.setNumber(crtProduct.getNumber() - curentProduct.getNumber());
 				Product newProduct(crtProduct.getName(), crtProduct.getPrice(), crtProduct.getNumber());
 				updateElem(crtProduct, newProduct);
 				break;
+				}
+				else
+				{
+					ok_product[i] = 1;
+					ok_name[i] = 1;
+					ok_number[i] = 0;
+					price = 0;
+					ok = 0;
+					break;
+				}
 			}
-
-			if ((strcmp(crtProduct.getName(), p.getName()) == 0) && (crtProduct.getNumber() < p.getNumber()))
+			if (ok == 1)
 			{
-				ok_product[i] = 1;
-				ok_name[i] = 1;
-				ok_number[i] = 0;
-				price = 0;
-				ok = -1;
-				break;
+				Product yesProduct(curentProduct.getName(), price, curentProduct.getNumber());
+				results[lenght++] = yesProduct;
 			}
-		}
-		if (ok == 1)
-		{
-			Product yesProduct(p.getName(), price, p.getNumber());
-			results[lenght++] = yesProduct;
-		}
 
-		if(ok == -1)
-		{
-			Product notProduct(p.getName(), 0, p.getNumber());
-			results[lenght++] = notProduct;
-		}
+			if (ok == 0)
+			{
+				Product notProduct(curentProduct.getName(), 0, curentProduct.getNumber());
+				results[lenght++] = notProduct;
+			}
 
-		if (ok == 0)
+		}
+		else
 		{
-			Product notProduct(p.getName(), 0, p.getNumber());
+			Product notProduct(curentProduct.getName(), 0, curentProduct.getNumber());
 			results[lenght++] = notProduct;
 			ok_product[i] = 0;
 			ok_name[i]= 0;

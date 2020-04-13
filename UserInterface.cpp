@@ -94,8 +94,8 @@ void UserInterface::buyElem()
         {
             if (ok_product[i] == 0)
             {
-                cout << endl << " The product wasn't bought! " << endl;
-                cout << " The name " << results[i].getName() << " of product did not exist! " << endl;
+                cout << endl << " The products wasn't bought! " << endl;
+                //cout << " The name " << results[i].getName() << " of product did not exist! " << endl;
             }
             else
             {
